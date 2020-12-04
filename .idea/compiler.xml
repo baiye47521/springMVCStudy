@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springMVCStudy" />
+        <module name="springMVC-03-annotation" />
+        <module name="springMVC-01-servlet" />
+        <module name="springMVC-02-handmvc" />
+        <module name="springMVC-04-controller" />
       </profile>
     </annotationProcessing>
   </component>
