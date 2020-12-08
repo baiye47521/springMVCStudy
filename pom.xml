@@ -15,6 +15,9 @@
         <module>springMVC-04-controller</module>
         <module>spring-05-json</module>
         <module>springMVC-05-json</module>
+        <module>springMVC-06-ajax</module>
+        <module>springMVC-07-intercepter</module>
+        <module>springMVC-08-file</module>
     </modules>
 
     <!--导入依赖-->

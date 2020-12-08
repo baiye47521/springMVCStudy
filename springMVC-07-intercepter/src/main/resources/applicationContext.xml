@@ -10,12 +10,8 @@
        http://www.springframework.org/schema/mvc
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--    <context:component-scan base-package="com.hand.controller"/>-->
-    <!--    <mvc:default-servlet-handler />-->
-    <!--    <mvc:annotation-driven />-->
     <context:component-scan base-package="com.hand.controller"/>
-
-    <!--解决乱码问题-->
+    <mvc:default-servlet-handler/>
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -38,5 +34,19 @@
         <!-- 后缀 -->
         <property name="suffix" value=".jsp" />
     </bean>
+
+    <!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--包括这个请求下的所有请求-->
+            <mvc:mapping path="/**"/>
+            <bean class="com.hand.config.MyInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <!--包括这个请求下的所有请求-->
+            <mvc:mapping path="/user/**"/>
+            <bean class="com.hand.config.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>
